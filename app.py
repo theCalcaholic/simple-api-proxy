@@ -13,7 +13,8 @@ def proxy(path):
     content = get(f'{proxy_url}/{path}').content
     print(content)
     return Response(content, mimetype="application/json", headers={
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "max-age=3600"
     })
 
 
